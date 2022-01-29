@@ -1,0 +1,20 @@
+body {
+  background-image: url('https://images2.alphacoders.com/790/thumb-1920-790564.png');
+  border: solid rgb(236, 167, 210) 5px;
+  border-radius: 20px;
+  image-resolution: 20%;
+  max-width: 40%;
+}
+
+h1 {
+  color: rgb(94, 6, 6);
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  line-height: 30px;
+  text-align: center;
+}
