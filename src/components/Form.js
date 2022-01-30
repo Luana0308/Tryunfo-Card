@@ -90,6 +90,7 @@ class Form extends React.Component {
             onChange={ onInputChange }
           >
             Raridade
+            <option value=""> </option>
             <option value="normal">normal</option>
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>
@@ -106,7 +107,7 @@ class Form extends React.Component {
           />
         </label>
         <button
-          type="submit"
+          type="button"
           data-testid="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
