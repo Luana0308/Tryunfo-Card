@@ -148,6 +148,17 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        {cardList.map((card) => (<Card
+          key={ card.name }
+          cardName={ card.name }
+          cardDescription={ card.description }
+          cardAttr1={ card.atri1 }
+          cardAttr2={ card.atri2 }
+          cardAttr3={ card.atri3 }
+          cardImage={ card.image }
+          cardRare={ card.raridade }
+          cardTrunfo={ card.trunfo }
+        />))}
       </section>
     );
   }

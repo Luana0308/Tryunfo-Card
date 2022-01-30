@@ -20,7 +20,8 @@ class Form extends React.Component {
       onSaveButtonClick,
     } = this.props;
 
-    const hasSuperTrunfoCard = cardList.filter((card) => card.trunfo).length > 0;
+    // o ? quer dizer opicional, ou seja só vai realizar a função do filter se o cardlist não for nulo
+    const hasSuperTrunfoCard = cardList?.filter((card) => card.trunfo).length > 0;
 
     return (
       <form className="form">
