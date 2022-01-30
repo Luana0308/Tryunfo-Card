@@ -83,7 +83,8 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardImage,
-      cardRare } = this.state;
+      cardRare,
+      cardTrunfo } = this.state;
     const card = {
       name: cardName,
       description: cardDescription,
@@ -92,9 +93,10 @@ class App extends React.Component {
       atri3: cardAttr3,
       image: cardImage,
       raridade: cardRare,
+      trunfo: cardTrunfo,
     };
     cardList.push(card);
-    console.log(cardList);
+
     this.setState(() => ({
       cardName: '',
       cardDescription: '',
@@ -117,7 +119,8 @@ class App extends React.Component {
       cardImage,
       cardRare,
       isSaveButtonDisabled,
-      cardTrunfo } = this.state;
+      cardTrunfo,
+      cardList } = this.state;
     return (
       <section>
         <h1>Tryunfo - One Piece </h1>
@@ -133,6 +136,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          cardList={ cardList }
         />
         <Card
           cardName={ cardName }
