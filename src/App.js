@@ -8,13 +8,14 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
+      cardList: [],
     };
   }
 
@@ -74,7 +75,38 @@ class App extends React.Component {
     }));
   };
 
-  onSaveButtonClick = () => {}
+  onSaveButtonClick = () => {
+    const { cardList,
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare } = this.state;
+    const card = {
+      name: cardName,
+      description: cardDescription,
+      atri1: cardAttr1,
+      atri2: cardAttr2,
+      atri3: cardAttr3,
+      image: cardImage,
+      raridade: cardRare,
+    };
+    cardList.push(card);
+    console.log(cardList);
+    this.setState(() => ({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
+    }));
+  };
 
   render() {
     const { cardName,
