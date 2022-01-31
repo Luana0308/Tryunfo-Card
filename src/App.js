@@ -110,6 +110,21 @@ class App extends React.Component {
     }));
   };
 
+  removeCard = (cardName, trunfo) => {
+    const { cardList } = this.state;
+    const cardRemove = cardList.filter((CardCurrent) => CardCurrent !== cardName);
+    if (trunfo) {
+      this.setState({
+        cardList: cardRemove,
+        cardTrunfo: false,
+      });
+    } else {
+      this.setState({
+        cardList: cardRemove,
+      });
+    }
+  }
+
   render() {
     const { cardName,
       cardDescription,
@@ -148,17 +163,27 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
-        {cardList.map((card) => (<Card
-          key={ card.name }
-          cardName={ card.name }
-          cardDescription={ card.description }
-          cardAttr1={ card.atri1 }
-          cardAttr2={ card.atri2 }
-          cardAttr3={ card.atri3 }
-          cardImage={ card.image }
-          cardRare={ card.raridade }
-          cardTrunfo={ card.trunfo }
-        />))}
+        {cardList.map((card) => (
+          <div key={ card.name }>
+            <Card
+              key={ card.name }
+              cardName={ card.name }
+              cardDescription={ card.description }
+              cardAttr1={ card.atri1 }
+              cardAttr2={ card.atri2 }
+              cardAttr3={ card.atri3 }
+              cardImage={ card.image }
+              cardRare={ card.raridade }
+              cardTrunfo={ card.trunfo }
+            />
+            <button
+              type="button"
+              data-testid="delete-button"
+              onClick={ () => this.removeCard(card, card.trunfo) }
+            >
+              Excluir
+            </button>
+          </div>))}
       </section>
     );
   }
