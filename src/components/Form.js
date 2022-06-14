@@ -24,10 +24,10 @@ class Form extends React.Component {
     const hasSuperTrunfoCard = cardList?.filter((card) => card.trunfo).length > 0;
 
     return (
-      <form className="form">
+      <form className="addCarta">
         <h1>Adicionar Nova Carta</h1>
         <label htmlFor="name-input">
-          Nome
+          Nome:
           <input
             name="cardName"
             type="text"
@@ -37,7 +37,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="description-input">
-          Descrição
+          Descrição:
           <textarea
             cols="10"
             rows="5"
@@ -48,7 +48,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr1-input">
-          Atributo 1
+          Atributo 1:
           <input
             name="cardAttr1"
             type="number"
@@ -58,7 +58,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr1-input">
-          Atributo 2
+          Atributo 2:
           <input
             name="cardAttr2"
             type="number"
@@ -68,7 +68,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr1-input">
-          Atributo 3
+          Atributo 3:
           <input
             name="cardAttr3"
             type="number"
@@ -78,7 +78,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="image-input">
-          Imagem
+          Imagem:
           <input
             name="cardImage"
             type="text"
@@ -88,13 +88,13 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="rare-input">
+          Raridade:
           <select
             name="cardRare"
             data-testid="rare-input"
             value={ cardRare }
             onChange={ onInputChange }
           >
-            Raridade
             <option value="normal">normal</option>
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>

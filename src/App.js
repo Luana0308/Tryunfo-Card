@@ -138,52 +138,62 @@ class App extends React.Component {
       cardList } = this.state;
     return (
       <section>
-        <h1>Tryunfo - One Piece </h1>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          onInputChange={ this.onInputChange }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          cardList={ cardList }
-        />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
-        {cardList.map((card) => (
-          <div key={ card.name }>
-            <Card
-              key={ card.name }
-              cardName={ card.name }
-              cardDescription={ card.description }
-              cardAttr1={ card.atri1 }
-              cardAttr2={ card.atri2 }
-              cardAttr3={ card.atri3 }
-              cardImage={ card.image }
-              cardRare={ card.raridade }
-              cardTrunfo={ card.trunfo }
+        <h1 className="title">Tryunfo - One Piece </h1>
+        <div className="boxCards">
+          <div className="formBox">
+            <Form
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              onInputChange={ this.onInputChange }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onSaveButtonClick={ this.onSaveButtonClick }
+              cardList={ cardList }
             />
-            <button
-              type="button"
-              data-testid="delete-button"
-              onClick={ () => this.removeCard(card, card.trunfo) }
-            >
-              Excluir
-            </button>
-          </div>))}
+          </div>
+          <div className="PreviwCard">
+            <h2>Preview da Carta</h2>
+            <Card
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
+        </div>
+        <div className="cardPronto">
+          {cardList.map((card) => (
+            <div className="cardItem" key={ card.name }>
+              <Card
+                key={ card.name }
+                cardName={ card.name }
+                cardDescription={ card.description }
+                cardAttr1={ card.atri1 }
+                cardAttr2={ card.atri2 }
+                cardAttr3={ card.atri3 }
+                cardImage={ card.image }
+                cardRare={ card.raridade }
+                cardTrunfo={ card.trunfo }
+              />
+              <button
+                type="button"
+                data-testid="delete-button"
+                onClick={ () => this.removeCard(card, card.trunfo) }
+              >
+                Excluir
+              </button>
+            </div>))}
+        </div>
+
       </section>
     );
   }
